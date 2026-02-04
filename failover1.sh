@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 ### This script must be on node2 (backup server1).Execute every 1 minutes via cron.
 
