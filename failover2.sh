@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 ### This script must be on node3 (backup server2).Execute every 1 minutes via cron.
 
 LOGFILE='/var/log/failover.log'
