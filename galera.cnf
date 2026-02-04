@@ -1,0 +1,20 @@
+[mysqld]
+# Basic Galera Settings
+binlog_format=ROW
+default_storage_engine=InnoDB
+innodb_autoinc_lock_mode=2
+bind-address=0.0.0.0
+transaction_isolation = READ-COMMITTED
+# Galera Cluster Settings
+wsrep_on=ON
+wsrep_provider=/usr/lib/galera/libgalera_smm.so
+wsrep_cluster_name="tailscale_galera_cluster"
+
+# List all Tailscale IPs of your 3 nodes here
+wsrep_cluster_address="gcomm://100.123.5.123,100.96.209.118,100.104.101.85"
+
+# Node-specific settings (Update these for each server)
+wsrep_node_address="100.123.5.123" # This node's Tailscale IP
+wsrep_node_name="db-node-1"
+wsrep_sst_method=rsync
+wsrep_sst_receive_address="100.123.5.123"
