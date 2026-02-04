@@ -82,5 +82,6 @@ chmod 600 cert/cert.pem cert/key.pem
     ├── nginx.conf
     └── syncthing_config
 ```
+- Both failover scripts has option for Telegram and Discord notification. 
 - The first failover script on backup server1 (node2) monitor primary server,and if primary is down ,then script switch the target ip address for A record app.example.com to the ip of node2 (itself).When primary server (node1) is up again,script revert the ip address of primary server in A record again.
 - The second failover script on backup server2 (node3) ,monitors primary server and backup server1 (node2).If primary is down AND node2 is down ,then script switch the A record ip address to ip of itself (node3).If primary is up switch the A record ip to primary .And if node2 is up - hand over control to node2.
